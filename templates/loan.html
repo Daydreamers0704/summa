@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Application Form</title>
+    <link rel="stylesheet" href="loan.css" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <form action="/submit" method="POST" enctype="multipart/form-data">
+            <div class="bank-name">
+                <label for="bank-name">Bank Name:</label>
+                <select name="bank-name" id="bank-name" required>
+                    <option value="" disabled selected>BANK NAME</option>
+                    <option value="STATE BANK OF INDIA">STATE BANK OF INDIA</option>
+                    <option value="INDIAN BANK">INDIAN BANK</option>
+                    <option value="KARUR VYSYA BANK">KARUR VYSYA BANK</option>
+                    <option value="CANARA BANK">CANARA BANK</option>
+                    <option value="ICICI BANK">INDUSTRIAL CREDIT AND INVESTMENT CORPORATION OF INDIA</option>
+                    <option value="HDFC BANK">HOUSING DEVELOPMENT AND FINANCE CORPORATION</option>
+                </select>
+                <div id="submitforinfo" class="form-group submit-group">
+                    <input type="button" value="Submit" onclick="showForm()">
+                </div>
+            </div>
+
+            <div id="candidate-info" class="candidate-information" style="display:none;">
+                <div id="fill-instruction">
+                    <h2>Loan Application Form for Individual Farmer Finance</h2>
+                    <p>(Filling all fields is mandatory; no field should be left blank. If a detail does not apply, please mention "NA" to avoid any blank spaces.)</p>
+                </div>
+
+                <div class="photo">
+                    <label for="photo-upload">Upload Photo:</label>
+                    <input type="file" id="photo-upload" name="photo-upload" accept="image/*" required>
+                </div>
+
+                <!-- First Container: Personal Details -->
+                <div class="form-container">
+                    <div class="form-group">
+                        <label for="application-number">Application Number:</label>
+                        <input type="number" id="application-number" name="application-number" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="application-date">Application Date:</label>
+                        <input type="date" id="application-date" name="application-date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="full-name">Candidate Name:</label>
+                        <input type="text" id="full-name" name="full-name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age">Candidate Age:</label>
+                        <input type="number" id="age" name="age" max="50" min="18" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dob">Date of Birth:</label>
+                        <input type="date" id="dob" name="dob" required min="1973-01-01" max="2006-01-01">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" maxlength="10" required pattern="\d{10}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fathername">Father's Name:</label>
+                        <input type="text" id="fathername" name="fathername" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mothername">Mother's Name:</label>
+                        <input type="text" id="mothername" name="mothername" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nationality">Nationality:</label>
+                        <select name="nationality" id="nationality" required>
+                            <option value="" disabled selected>Select your nationality</option>
+                            <option value="india">India</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Second Container: Address and Loan Details -->
+                <div class="form-group">
+                    <label for="state">State/Union Territory:</label>
+                    <select name="state" id="state" required>
+                        <option value="" disabled selected>Select your state/union territory</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Odisha">Odisha</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="Uttarakhand">Uttarakhand</option>
+                        <option value="West Bengal">West Bengal</option>
+                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+                        <option value="Lakshadweep">Lakshadweep</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Puducherry">Puducherry</option>
+                        <option value="Ladakh">Ladakh</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                    </select>
+                </div>
+                <div class="form-container">
+                    <div class="form-group">
+                        <label for="district">District:</label>
+                        <input type="text" id="district" name="district" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="area">Area:</label>
+                        <textarea id="area" name="area" required rows="4" cols="10"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pincode">Pincode:</label>
+                        <input type="text" id="pincode" name="pincode" required maxlength="6" pattern="\d{6}">
+                    </div>
+
+                    <div class="form-group textarea-group">
+                        <label for="loan-purpose">Loan Purpose:</label>
+                        <textarea id="loan-purpose" name="loan-purpose" required rows="4"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loan-amount">Loan Amount:</label>
+                        <input type="number" id="loan-amount" name="loan-amount" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loan-term">Loan Term:</label>
+                        <select id="loan-term" name="loan-term" required>
+                            <option value="12">12 months</option>
+                            <option value="24">24 months</option>
+                            <option value="36">36 months</option>
+                            <option value="48">48 months</option>
+                            <option value="60">60 months</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group file-group">
+                        <label for="income-proof">Income Proof:</label>
+                        <input type="file" id="income-proof" name="income-proof" required>
+                    </div>
+
+                    <div class="form-group file-group">
+                        <label for="aadhar-proof">Aadhar Proof:</label>
+                        <input type="file" id="aadhar-proof" name="aadhar-proof" required>
+                    </div>
+
+                    <div class="form-group file-group">
+                        <label for="digital-sign">Digital Signature:</label>
+                        <input type="file" id="digital-sign" name="digital-sign" required>
+                    </div>
+
+                    <div class="form-group submit-group">
+                        <input type="submit" value="Submit">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        function showForm() {
+            var bankName = document.getElementById("bank-name").value;
+            if (bankName !== "") {
+                document.getElementById("candidate-info").style.display = "block";
+                document.getElementById("submitforinfo").style.display = "none";
+            } else {
+                alert("Please select a bank name first!");
+            }
+        }
+    </script>
+</body>
+</html>
+
